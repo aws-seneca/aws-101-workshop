@@ -1,0 +1,17 @@
+{
+  "name": "aws-101-workshop",
+  "version": "1.0.0",
+  "description": "AWS 101 workshop sign-up app (starter)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}

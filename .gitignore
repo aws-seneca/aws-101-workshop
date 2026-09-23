@@ -1,0 +1,4 @@
+node_modules/
+signups.json
+global-bundle.pem
+.env
