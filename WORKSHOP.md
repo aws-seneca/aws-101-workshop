@@ -14,7 +14,7 @@ Use one region for everything, for example `ca-central-1` (Canada Central).
 1. EC2 console, **Launch instance**:
    - AMI: **Amazon Linux 2023**
    - Instance type: **t3.small** (the build needs 2 GB of memory; t3.micro is too small)
-   - Security group: add **Custom TCP, port 3000**, source **My IP**
+   - Security group: keep **Allow SSH traffic from Anywhere** (EC2 Instance Connect needs it), and add **Custom TCP, port 3000**, source **My IP**
 2. Connect with **EC2 Instance Connect** and run:
 
    ```bash
@@ -74,6 +74,7 @@ The app writes errors to the terminal, and `/admin` shows a red banner.
 | `timeout` or `Connection terminated` | The database was not created with **Connect to an EC2 compute resource** for this instance. In RDS, select the database, **Actions**, **Set up EC2 connection** |
 | `password authentication failed` | Wrong password in `.env`. Check for typos; you can reset it with **Modify** on the database |
 | `getaddrinfo ENOTFOUND` | The endpoint in `.env` has a typo |
+| **Connect** fails to open the terminal | SSH (port 22) must allow **Anywhere**: EC2 Instance Connect connects from AWS's addresses, which **My IP** blocks |
 | Label still says **Local JSON** | `.env` is not in the `aws-101-workshop` folder, or the app was not restarted |
 
 ## Optional: nginx on port 80 with Docker
