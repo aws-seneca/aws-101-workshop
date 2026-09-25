@@ -1,4 +1,9 @@
 node_modules/
+.next/
 signups.json
-global-bundle.pem
 .env
+*.log
+
+# Tool and editor folders (.claude, .playwright-mcp, .vscode, ...). Never committed.
+.*/
+!.github/
